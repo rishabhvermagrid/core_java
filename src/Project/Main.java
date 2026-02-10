@@ -10,7 +10,7 @@ public class Main {
             // Add students
             s.addStudent(new Student(1, "rishabh", 25, 89.5));
             s.addStudent(new Student(2, "anshika", 23, 81.5));
-            s.addStudent(new Student(3, "gaurav", 22, 59.5));
+//            s.addStudent(new Student(3, null, 150, -100));
 
             // Try duplicate
             // s.addStudent(new Student(1, "rishabh", 25, 89.5));
@@ -28,7 +28,7 @@ public class Main {
             // Try removing non-existing student
             // s.removeStudentById(10);
 
-        } catch (DuplicateStudentException | StudentNotFoundException e) {
+        } catch (DuplicateStudentException | StudentNotFoundException  | StudentDetailsNotCorrect e) {
             System.out.println("Error: " + e.getMessage());
         }
     }

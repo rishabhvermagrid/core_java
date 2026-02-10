@@ -5,3 +5,8 @@ public class DuplicateStudentException extends RuntimeException {
         super(msg);
     }
 }
+
+
+/*
+throw new DuplicateStudentException("student with id " + s.getId() + "already exists");
+ */

@@ -17,18 +17,22 @@ public class Student {
     public int getId(){
         return id;
     }
+    public int getAge(){
+        return age;
+    }
     public double getMarks(){
         return marks;
     }
     public String getName(){
         return name;
     }
+//    By default, Student inherits from Object, and it will check only memory references
     @Override
     public boolean equals(Object obj){
         if(this == obj) return true;
         if(obj == null) return false;
-        if(getClass() != obj.getClass()) return false; //*************************
-        Student other = (Student)obj;
+        if(getClass() != obj.getClass()) return false; //If this object and obj are not of the exact same class, they are not equal.
+        Student other = (Student)obj; //Object to Student so we can access Student's fields
         return this.id == other.id;
     }
     @Override

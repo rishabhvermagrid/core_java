@@ -4,6 +4,9 @@ import java.util.*;
 public class StudentService {
     private Set<Student> students = new HashSet<>();
     public void addStudent(Student s){
+        if(s.getName() == null || (s.getMarks()<0 || s.getMarks()>100) || s.getAge()<0 ){
+            throw new StudentDetailsNotCorrect("student details, you are trying to enter are not correct");
+        }
         boolean check = students.add(s);
         if(!check){
             throw new DuplicateStudentException(
@@ -41,6 +44,7 @@ public class StudentService {
         list.sort((s1,s2)-> Double.compare(s2.getMarks(),s1.getMarks()));
         return list;
     }
+
     public List<Student> getAllStudentsSortedByNameThenMarks(){
         List<Student> list = new ArrayList<>(students);
         list.sort((s1,s2)-> {
